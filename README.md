@@ -126,9 +126,9 @@ Step 4. This script finally filter out all the RS reads that have matched some o
 
 
 # scripts used to generate Figures 3E and 3F: 
-- python_tomake_bubble_chart.py
-- python_tomake_piechart.py
-- python_tomake_funnel_chart.py
+- fig_3E_bubblechart.py
+- fig_3E_piechart.py
+- fig_3F_funnelchart.py
 
 
 
