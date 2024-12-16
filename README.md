@@ -92,3 +92,55 @@
 
 - variable_fusion_expression.R:  
   Focuses on visualizing fusion transcripts with inter-individual variation.
+
+
+##Investigating Coding Potential of Fusion Transcripts through Ribosomal Profiling Data #####
+
+#ribo-seq in FT: 
+Step 1. This script processes a .fastq file containing Ribo-Seq (RS) reads,
+# aligns the reads to the indexed transcripts using Bowtie2, converts SAM to BAM, 
+# sorts and indexes the BAM files, and extracts reads for each transcript. 
+# The results are saved in separate directories for SAM/BAM files and FASTA 
+# files for each fusion transcript and sample combination.
+# Header names are assigned based on the gene name the RS reads matched to. 
+Step 2. This script filter out RS reads that are not spanning the fusion 
+# junction of the FT they matched. 
+Step 3. All the positive selected RS reads, are screened with BlastN, to find
+# whether they match some known transcripts as well or they're uniquely matching
+# the novel FT. 
+Step 4. This script finally filter out all the RS reads that have matched some
+# other known transcripts in the genome.
+
+
+#ribo-seq in positive controls: with this script we generated 10 random sets of 717 control transcripts spanning exon-exon junctions. 
+- script 0: final_posctrl_creation_0.sh & final_posctrl_creation_python_to_run_with_0.py
+#script 0 (bash+python): retrieve exons and introns coordinates of all genes from GENCODE_v44 file 
+
+- script 1: final_posctrl_creation_1.sh
+#script 1 (bash): shuffle and select 717 random exon junctions (43bp) and get fasta sequences
+#after script 1 , to get ENSG  
+- https://www.ensembl.org/biomart/martview/e3d502e53e5b353cf21726a897d51ac4 (tsv)
+- NB: manually add names ENSG when missing
+
+- script 2: final_posctrl_creation_2.py
+#script 2 (python): match the ENSG name to the specific ENST name
+
+- script 3: final_posctrl_creation_3.sh
+#script 3 (bash): create fasta file with ENSG + sequence 
+
+- script 4: final_posctrl_creation_4.py
+#script 4 (python): generate final fasta file with the merged end (43bp) + start sequences (43bp) = 86bp
+
+- positive_control_BlastN_filtering
+
+
+#scripts used to generate Figures 3E and 3F: 
+- python_tomake_bubble_chart.py
+- python_tomake_piechart.py
+- python_tomake_funnel_chart.py
+
+
+
+
+
+
