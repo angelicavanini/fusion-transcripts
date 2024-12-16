@@ -97,19 +97,10 @@
 ##Investigating Coding Potential of Fusion Transcripts through Ribosomal Profiling Data #####
 
 #ribo-seq in FT: 
-Step 1. This script processes a .fastq file containing Ribo-Seq (RS) reads,
-# aligns the reads to the indexed transcripts using Bowtie2, converts SAM to BAM, 
-# sorts and indexes the BAM files, and extracts reads for each transcript. 
-# The results are saved in separate directories for SAM/BAM files and FASTA 
-# files for each fusion transcript and sample combination.
-# Header names are assigned based on the gene name the RS reads matched to. 
-Step 2. This script filter out RS reads that are not spanning the fusion 
-# junction of the FT they matched. 
-Step 3. All the positive selected RS reads, are screened with BlastN, to find
-# whether they match some known transcripts as well or they're uniquely matching
-# the novel FT. 
-Step 4. This script finally filter out all the RS reads that have matched some
-# other known transcripts in the genome.
+Step 1. This script processes a .fastq file containing Ribo-Seq (RS) reads, aligns the reads to the indexed transcripts using Bowtie2, converts SAM to BAM, sorts and indexes the BAM files, and extracts reads for each transcript. The results are saved in separate directories for SAM/BAM files and FASTA files for each fusion transcript and sample combination. Header names are assigned based on the gene name the RS reads matched to. 
+Step 2. This script filter out RS reads that are not spanning the fusion junction of the FT they matched. 
+Step 3. All the positive selected RS reads, are screened with BlastN, to find whether they match some known transcripts as well or they're uniquely matching the novel FT. 
+Step 4. This script finally filter out all the RS reads that have matched some other known transcripts in the genome.
 
 
 #ribo-seq in positive controls: with this script we generated 10 random sets of 717 control transcripts spanning exon-exon junctions. 
