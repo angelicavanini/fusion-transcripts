@@ -94,16 +94,16 @@
   Focuses on visualizing fusion transcripts with inter-individual variation.
 
 
-##Investigating Coding Potential of Fusion Transcripts through Ribosomal Profiling Data #####
+## Investigating Coding Potential of Fusion Transcripts through Ribosomal Profiling Data
 
-#ribo-seq in FT: 
+# ribo-seq in FT: 
 Step 1. This script processes a .fastq file containing Ribo-Seq (RS) reads, aligns the reads to the indexed transcripts using Bowtie2, converts SAM to BAM, sorts and indexes the BAM files, and extracts reads for each transcript. The results are saved in separate directories for SAM/BAM files and FASTA files for each fusion transcript and sample combination. Header names are assigned based on the gene name the RS reads matched to. 
 Step 2. This script filter out RS reads that are not spanning the fusion junction of the FT they matched. 
 Step 3. All the positive selected RS reads, are screened with BlastN, to find whether they match some known transcripts as well or they're uniquely matching the novel FT. 
 Step 4. This script finally filter out all the RS reads that have matched some other known transcripts in the genome.
 
 
-#ribo-seq in positive controls: with this script we generated 10 random sets of 717 control transcripts spanning exon-exon junctions. 
+# ribo-seq in positive controls: with this script we generated 10 random sets of 717 control transcripts spanning exon-exon junctions. 
 - script 0: final_posctrl_creation_0.sh & final_posctrl_creation_python_to_run_with_0.py
 #script 0 (bash+python): retrieve exons and introns coordinates of all genes from GENCODE_v44 file 
 
@@ -125,7 +125,7 @@ Step 4. This script finally filter out all the RS reads that have matched some o
 - positive_control_BlastN_filtering
 
 
-#scripts used to generate Figures 3E and 3F: 
+# scripts used to generate Figures 3E and 3F: 
 - python_tomake_bubble_chart.py
 - python_tomake_piechart.py
 - python_tomake_funnel_chart.py
