@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 # Sample data
 labels = ['in-frame', 'out-of-frame']
 sizes = [151, 122]  # Sizes for each slice, 151 is in frame and 122 out-of-frame
-colors = ['black', 'dimgrey']  # Custom colors for each slice
+colors = ['black', 'dimgrey'] 
 
 # Function to display actual values
 def absolute_value(val):
