@@ -3,17 +3,17 @@
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
-# Data for Condition 1:Fusion Transcripts
+# Data for Fusion Transcripts
 sample_counts_1 = [717, 672, 51]
 
-# Data for Condition 2:Normal Transcripts
+# Data for Normal Transcripts
 stages = ['A', 'B', 'C']
 sample_counts_2 = [717, 680, 212]
 
 # Create a subplot figure with 1 row and 2 columns
 fig = make_subplots(rows=1, cols=2, subplot_titles=("Fusion Transcripts", "Normal Transcripts"))
 
-# Funnel chart for Condition 1
+# Funnel chart for FT
 funnel_1 = go.Funnel(
     y=stages,
     x=sample_counts_1,
@@ -22,7 +22,7 @@ funnel_1 = go.Funnel(
     marker=dict(color=["#154360", "#1F618D", "#7FB3D5"])
 )
 
-# Funnel chart for Condition 2
+# Funnel chart for NT
 funnel_2 = go.Funnel(
     y=stages,
     x=sample_counts_2,
